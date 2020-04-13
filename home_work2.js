@@ -1,11 +1,11 @@
 //Функции
 
 //1. Получить строковое название дня недели по номеру дня.
-function dateFoo(date) {
+function dateFoo (date) {
   var days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
   return days[date.getDay()]
 }
-var date = new Date(2020, 2, 14) 
+var date = new Date("April 10, 2020 ")
 console.log(dateFoo(date))
 
 //2. Вводим число (0-999), получаем строку с прописью числа.
@@ -155,8 +155,17 @@ function getStringNumber (string) {
   console.log(`${resultNum}`)
 }
 
-
-
-
-
 //4. Найти расстояние между двумя точками в двумерном декартовом пространстве.
+
+class Dots {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  disance(d1, d2) {
+    return Math.sqrt(((d2.x - d1.x) ** 2) + ((d2.y - d1.y) ** 2));
+  }
+}
+const dot = new Dots();
+console.log(dot.disance(new Dots(8, -4), new Dots(12, 18)));
